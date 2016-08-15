@@ -12,7 +12,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		9091E2B51D626E9E00033AE4 /* ScreenBrightnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9091E2B41D626E9E00033AE4 /* ScreenBrightnessTests.swift */; };
 		BFAF40D1D4E400471D13896D /* Pods_ScreenBrightness_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90568699ED13E34ADDD25C1B /* Pods_ScreenBrightness_Tests.framework */; };
 		CC3903EB0BBFBCD8A00F723D /* Pods_ScreenBrightness_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1DFBBC974C2FF38ECC9D71 /* Pods_ScreenBrightness_Example.framework */; };
 /* End PBXBuildFile section */
@@ -40,12 +40,12 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ScreenBrightness_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenBrightness_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6F36D80EB5E9BB375C0218FF /* Pods-ScreenBrightness_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenBrightness_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScreenBrightness_Example/Pods-ScreenBrightness_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		719C028CD6735A411D85D332 /* ScreenBrightness.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ScreenBrightness.podspec; path = ../ScreenBrightness.podspec; sourceTree = "<group>"; };
 		7A214F569EF60A6B164B9B5A /* Pods-ScreenBrightness_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenBrightness_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScreenBrightness_Example/Pods-ScreenBrightness_Example.release.xcconfig"; sourceTree = "<group>"; };
 		7D6304A2E3B8DD732F733A5A /* Pods-ScreenBrightness_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenBrightness_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScreenBrightness_Tests/Pods-ScreenBrightness_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		90568699ED13E34ADDD25C1B /* Pods_ScreenBrightness_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScreenBrightness_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9091E2B41D626E9E00033AE4 /* ScreenBrightnessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenBrightnessTests.swift; sourceTree = "<group>"; };
 		B872A129F00941BE141073B0 /* Pods-ScreenBrightness_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenBrightness_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScreenBrightness_Tests/Pods-ScreenBrightness_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +126,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				9091E2B41D626E9E00033AE4 /* ScreenBrightnessTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				9091E2B51D626E9E00033AE4 /* ScreenBrightnessTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

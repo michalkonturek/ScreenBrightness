@@ -1,5 +1,5 @@
 PODS:
-  - ScreenBrightness (0.1.0)
+  - ScreenBrightness (1.0.0)
 
 DEPENDENCIES:
   - ScreenBrightness (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ScreenBrightness: ef9e813fbcdf91408c0c5d1ac0c25de2be319467
+  ScreenBrightness: fd5d499e6cce3e44f755cf1fd53867b216593f23
 
 PODFILE CHECKSUM: ae04830db40fd0d0fb95192c7712728f14865089
 

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3818E0FB54DD1CDA6F4EBF53E05AF73D /* ScreenBrightness-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1DDCB076CDD617C059AF896B9DB24 /* ScreenBrightness-dummy.m */; };
 		3A5050609B6877286FC845DD7C2A5D77 /* Pods-ScreenBrightness_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC103601D43E590F5A9FBED93C38CCA /* Pods-ScreenBrightness_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		53F753D3B92248DA05933E90427251A1 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94876D0DFA4BDAF6F6EAB7270FF9FBD9 /* ReplaceMe.swift */; };
 		5E66F918F5C9EEAFFC917964E5C483DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		71067E257D7E8C42B2225F7D4DD0FEA2 /* Pods-ScreenBrightness_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5550D63376F7F8A98034484ABC5169A7 /* Pods-ScreenBrightness_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7AA014BA820FC9C9163E2B8B0A694D70 /* ScreenBrightness-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1DDCB076CDD617C059AF896B9DB24 /* ScreenBrightness-dummy.m */; };
 		82FA3D25D2721B2D4647C8CC83911356 /* Pods-ScreenBrightness_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E73F53B2EED61279E0F8BC91FF57AF89 /* Pods-ScreenBrightness_Example-dummy.m */; };
 		8C8B5E1A69BF6616459147A6974BF52C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		BA218A6BAE34BA6DB272018A28FC8593 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		BBB93F2783F1BFBBDC08E9315468C06F /* Pods-ScreenBrightness_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 026EE9DDD2FDA31DD712F98F3F80BA90 /* Pods-ScreenBrightness_Tests-dummy.m */; };
 		BDCB5FACC77205B18785FF9238ACB887 /* ScreenBrightness-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6571554D022A21ED55CA18DEDDF25065 /* ScreenBrightness-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E245CCF46E3FA41DA9013A92C38677EC /* ScreenBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13BC35041D20DB11F617B4BBC352727 /* ScreenBrightness.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +50,9 @@
 		86E96909E6B8A59E5E5EF3E0B29E014F /* Pods_ScreenBrightness_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScreenBrightness_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9469619958E49029D5A1128BD9AC97F9 /* Pods-ScreenBrightness_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScreenBrightness_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		94876D0DFA4BDAF6F6EAB7270FF9FBD9 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		9E91653B5C48A153444B3A951BEE8082 /* ScreenBrightness-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScreenBrightness-prefix.pch"; sourceTree = "<group>"; };
 		9EC103601D43E590F5A9FBED93C38CCA /* Pods-ScreenBrightness_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScreenBrightness_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B13BC35041D20DB11F617B4BBC352727 /* ScreenBrightness.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScreenBrightness.swift; sourceTree = "<group>"; };
 		B48C23B2E85DC061E5999CC118943A9C /* Pods-ScreenBrightness_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScreenBrightness_Example-resources.sh"; sourceTree = "<group>"; };
 		B5C59DBBF18B1195D6D63CD3EC97263E /* ScreenBrightness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreenBrightness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DD8772DEBD8E78C5CA2F080F6352D1 /* Pods-ScreenBrightness_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScreenBrightness_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		8EC779FFC424FA196600B34CB6390AFF /* ScreenBrightness */ = {
 			isa = PBXGroup;
 			children = (
-				F92C3F5B5A25D476A1FFBE128C8DFE84 /* Classes */,
+				DD5B45E3067F03501081CC349DEDE173 /* Classes */,
 			);
 			path = ScreenBrightness;
 			sourceTree = "<group>";
@@ -194,6 +194,14 @@
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD5B45E3067F03501081CC349DEDE173 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B13BC35041D20DB11F617B4BBC352727 /* ScreenBrightness.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F06E5410651D15855377AA8C8C14489F /* Pods-ScreenBrightness_Tests */ = {
@@ -212,14 +220,6 @@
 			);
 			name = "Pods-ScreenBrightness_Tests";
 			path = "Target Support Files/Pods-ScreenBrightness_Tests";
-			sourceTree = "<group>";
-		};
-		F92C3F5B5A25D476A1FFBE128C8DFE84 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				94876D0DFA4BDAF6F6EAB7270FF9FBD9 /* ReplaceMe.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57BF711516A9CB8EC96FE6F33005EDBA /* Build configuration list for PBXNativeTarget "ScreenBrightness" */;
 			buildPhases = (
-				2788AF9442AF9C08EA60B195B57D3614 /* Sources */,
+				2651C73302272C6E55DCB601F639CDBA /* Sources */,
 				C427565189823627E4F79F3DA6B1BB96 /* Frameworks */,
 				18E5D33C615AE6BC9213945F3E8EDA0B /* Headers */,
 			);
@@ -341,12 +341,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2788AF9442AF9C08EA60B195B57D3614 /* Sources */ = {
+		2651C73302272C6E55DCB601F639CDBA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53F753D3B92248DA05933E90427251A1 /* ReplaceMe.swift in Sources */,
-				7AA014BA820FC9C9163E2B8B0A694D70 /* ScreenBrightness-dummy.m in Sources */,
+				3818E0FB54DD1CDA6F4EBF53E05AF73D /* ScreenBrightness-dummy.m in Sources */,
+				E245CCF46E3FA41DA9013A92C38677EC /* ScreenBrightness.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
