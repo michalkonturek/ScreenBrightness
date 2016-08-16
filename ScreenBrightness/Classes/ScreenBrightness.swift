@@ -7,12 +7,18 @@
 //
 
 import Foundation
-//import UIKit
+
+public protocol ScreenBrightnessMonitoring: class {
+    func screenBrightnessDidChange()
+    func screenBrightnessDidChangeToDark();
+    func screenBrightnessDidChangeToLight();
+}
 
 public class ScreenBrightness {
+    public weak var delegate: ScreenBrightnessMonitoring?
+    
     var notificationCenter: NSNotificationCenter
     var border: Float
-//    var screen: UIScreen
     
     convenience public init() {
         self.init(notificationCenter: NSNotificationCenter.defaultCenter())
@@ -27,7 +33,7 @@ public class ScreenBrightness {
     func subscribeToNotifications() {
         let center = self.notificationCenter
         center.addObserver(self,
-                           selector: #selector(screenBrightnessDidChange),
+                           selector: #selector(onScreenBrightnessDidChange),
                            name: UIScreenBrightnessDidChangeNotification,
                            object: nil)
     }
@@ -36,13 +42,26 @@ public class ScreenBrightness {
         self.notificationCenter.removeObserver(self)
     }
     
-    @objc func screenBrightnessDidChange(notification: NSNotification) {
-        
+    @objc public func onScreenBrightnessDidChange() {
+        self.screenBrightnessDidChange()
     }
 
 }
 
-//protocol ScreenBrightnessMonitoring {
-//    func screenBrightnessDidChangeToLight();
-//    func screenBrightnessDidChangeToDark();
-//}
+
+// MARK: - ScreenBrightnessMonitoring
+
+extension ScreenBrightness: ScreenBrightnessMonitoring {
+    
+    public func screenBrightnessDidChange() {
+        self.delegate?.screenBrightnessDidChange()
+    }
+    
+    public func screenBrightnessDidChangeToDark() {
+        self.delegate?.screenBrightnessDidChangeToDark()
+    }
+    
+    public func screenBrightnessDidChangeToLight() {
+        self.delegate?.screenBrightnessDidChangeToLight()
+    }
+}

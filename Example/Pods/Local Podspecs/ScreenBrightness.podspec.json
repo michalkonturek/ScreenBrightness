@@ -18,6 +18,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ScreenBrightness/Classes/**/*",
-  "frameworks": "UIKit"
+  "source_files": "ScreenBrightness/Classes/**/*"
 }
