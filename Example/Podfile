@@ -6,6 +6,6 @@ target 'ScreenBrightness_Example' do
   target 'ScreenBrightness_Tests' do
     inherit! :search_paths
 
-    
+	pod 'ScreenBrightness', :path => '../'	    
   end
 end
