@@ -17,13 +17,15 @@ public protocol ScreenBrightnessMonitoring: class {
 public class ScreenBrightness {
     public weak var delegate: ScreenBrightnessMonitoring?
     
+    weak var screen: UIScreen?
     var notificationCenter: NSNotificationCenter
     
-    convenience public init() {
-        self.init(notificationCenter: NSNotificationCenter.defaultCenter())
+    convenience public init(screen: UIScreen) {
+        self.init(screen: screen, notificationCenter: NSNotificationCenter.defaultCenter())
     }
     
-    public init(notificationCenter: NSNotificationCenter) {
+    public init(screen: UIScreen, notificationCenter: NSNotificationCenter) {
+        self.screen = screen
         self.notificationCenter = notificationCenter
         self.subscribeToNotifications()
     }
@@ -42,6 +44,13 @@ public class ScreenBrightness {
     
     @objc func onScreenBrightnessDidChange() {
         self.screenBrightnessDidChange()
+        
+        NSLog("\(self.screen?.brightness)")
+        if self.screen?.brightness > 0.5 {
+            self.screenBrightnessDidChangeToLight()
+        } else {
+            self.screenBrightnessDidChangeToDark()
+        }
     }
 
 }

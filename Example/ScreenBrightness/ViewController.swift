@@ -11,7 +11,7 @@ import UIKit
 import ScreenBrightness
 
 class ViewController: UIViewController {
-    var screenBrightness = ScreenBrightness()
+    var screenBrightness = ScreenBrightness(screen: UIScreen.mainScreen())
 
     override func viewDidLoad() {
         super.viewDidLoad()
