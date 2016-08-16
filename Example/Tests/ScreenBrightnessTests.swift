@@ -23,7 +23,6 @@ class ScreenBrightnessTests: XCTestCase {
     func test_init() {
         XCTAssertNotNil(self.sut)
         XCTAssertNotNil(self.sut.notificationCenter)
-        XCTAssertTrue(self.sut.border == 0.5)
         XCTAssertTrue(self.sut === self.mockCenter.observer)
     }
     

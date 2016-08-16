@@ -18,7 +18,6 @@ public class ScreenBrightness {
     public weak var delegate: ScreenBrightnessMonitoring?
     
     var notificationCenter: NSNotificationCenter
-    var border: Float
     
     convenience public init() {
         self.init(notificationCenter: NSNotificationCenter.defaultCenter())
@@ -26,7 +25,6 @@ public class ScreenBrightness {
     
     public init(notificationCenter: NSNotificationCenter) {
         self.notificationCenter = notificationCenter
-        self.border = 0.5;
         self.subscribeToNotifications()
     }
     
@@ -42,7 +40,7 @@ public class ScreenBrightness {
         self.notificationCenter.removeObserver(self)
     }
     
-    @objc public func onScreenBrightnessDidChange() {
+    @objc func onScreenBrightnessDidChange() {
         self.screenBrightnessDidChange()
     }
 
