@@ -14,13 +14,14 @@ public class ScreenBrightness {
     var border: Float
 //    var screen: UIScreen
     
-    public init() {
-        self.notificationCenter = NSNotificationCenter.defaultCenter()
-        self.border = 0.5;
+    convenience public init() {
+        self.init(notificationCenter: NSNotificationCenter.defaultCenter())
     }
     
-    deinit {
-        self.notificationCenter.removeObserver(self)
+    public init(notificationCenter: NSNotificationCenter) {
+        self.notificationCenter = notificationCenter
+        self.border = 0.5;
+        self.subscribeToNotifications()
     }
     
     func subscribeToNotifications() {
@@ -29,6 +30,10 @@ public class ScreenBrightness {
                            selector: #selector(screenBrightnessDidChange),
                            name: UIScreenBrightnessDidChangeNotification,
                            object: nil)
+    }
+    
+    deinit {
+        self.notificationCenter.removeObserver(self)
     }
     
     @objc func screenBrightnessDidChange(notification: NSNotification) {
