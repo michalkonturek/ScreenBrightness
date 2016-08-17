@@ -11,35 +11,57 @@ import XCTest
 @testable import ScreenBrightness
 
 class ScreenBrightnessTests: XCTestCase {
-    var mockScreen = MockScreen()
-    var mockCenter = MockNotificationCenter()
     var sut: ScreenBrightness!
     
+    var mockScreen = MockScreen()
+    let center = NSNotificationCenter.defaultCenter()
+    
+    let delegate = TestDelegate()
+    var didCall = false
+    
+    override func setUp() {
+        super.setUp()
+        
+        self.delegate.onDidChange = { self.didCall = true }
+        
+        self.sut = ScreenBrightness(screen: self.mockScreen, notificationCenter: self.center)
+        self.sut.delegate = self.delegate
+    }
+    
     func test_init() {
-        self.sut = ScreenBrightness(screen: mockScreen, notificationCenter: self.mockCenter)
+        let mockCenter = MockNotificationCenter()
+        self.sut = ScreenBrightness(screen: mockScreen, notificationCenter: mockCenter)
         
         XCTAssertNotNil(self.sut)
         XCTAssertNotNil(self.sut.notificationCenter)
         XCTAssertNotNil(self.sut.notificationCenter)
-        XCTAssertTrue(self.sut === self.mockCenter.observer)
+        XCTAssertTrue(self.sut === mockCenter.observer)
     }
     
-    func test_onScreenBrightnessDidChange() {
+    func test_onScreenBrightnessDidChange_callsDidChangeToLight() {
 
-        var didCall = false
-        var didCallDark = false
         var didCallLight = false
         
-        let center = NSNotificationCenter.defaultCenter()
-        self.sut = ScreenBrightness(screen: self.mockScreen, notificationCenter: center)
+        // given
+        self.delegate.onDidChangeToLight = { didCallLight = true }
+        XCTAssertFalse(self.didCall)
+        
+        // when
+        self.mockScreen.brightness = 0.6
+        center.postNotificationName(UIScreenBrightnessDidChangeNotification, object: nil)
+        
+        // then
+        XCTAssertTrue(self.didCall)
+        XCTAssertTrue(didCallLight)
+    }
+    
+    func test_onScreenBrightnessDidChange_callsDidChangeToDark() {
+        
+        var didCallDark = false
         
         // given
-        let delegate = TestDelegate()
-        self.sut.delegate = delegate
-        
-        delegate.onDidChange = { didCall = true }
-        delegate.onDidChangeToDark = { didCallDark = true }
-        delegate.onDidChangeToLight = { didCallLight = true }
+        self.delegate.onDidChangeToDark = { didCallDark = true }
+        XCTAssertFalse(self.didCall)
         
         // when
         self.mockScreen.brightness = 0.4
@@ -48,14 +70,6 @@ class ScreenBrightnessTests: XCTestCase {
         // then
         XCTAssertTrue(didCall)
         XCTAssertTrue(didCallDark)
-
-        // when
-        self.mockScreen.brightness = 0.6
-        center.postNotificationName(UIScreenBrightnessDidChangeNotification, object: nil)
-        
-        // then
-        XCTAssertTrue(didCall)
-        XCTAssertTrue(didCallLight)
     }
     
 }
