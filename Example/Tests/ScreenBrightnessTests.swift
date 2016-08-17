@@ -79,7 +79,13 @@ class TestDelegate: ScreenBrightnessMonitoring {
 }
 
 class MockScreen: UIScreen {
-    override var brightness: CGFloat
+    var value: CGFloat = 0
+    override var brightness: CGFloat {
+        get { return value }
+        set {
+            value = newValue
+        }
+    }
 }
 
 class MockNotificationCenter: NSNotificationCenter {
