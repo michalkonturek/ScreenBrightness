@@ -20,27 +20,36 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKo-Th-p9u">
-                                <rect key="frame" x="32" y="257" width="256" height="54"/>
+                                <rect key="frame" x="34" y="257" width="252" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="73" id="nTe-Hs-dQy"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="uP0-UT-7aM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="45"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="45"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brigthness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eR-03-9zj">
-                                <rect key="frame" x="32" y="228" width="82" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="34" y="239" width="74" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="BHS-kq-ixJ">
+                                <rect key="frame" x="96" y="69" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="Kk2-NY-yAe"/>
+                                    <constraint firstAttribute="height" constant="128" id="Zj2-tf-kQa"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.92549020049999997" green="0.94117647410000005" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="BHS-kq-ixJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5qp-xU-9ft"/>
                             <constraint firstItem="xKo-Th-p9u" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerYWithinMargins" id="Bqc-td-2vv"/>
-                            <constraint firstItem="xKo-Th-p9u" firstAttribute="top" secondItem="0eR-03-9zj" secondAttribute="bottom" constant="8" id="DT5-BD-58M"/>
+                            <constraint firstItem="xKo-Th-p9u" firstAttribute="top" secondItem="0eR-03-9zj" secondAttribute="bottom" id="DT5-BD-58M"/>
                             <constraint firstItem="0eR-03-9zj" firstAttribute="leading" secondItem="xKo-Th-p9u" secondAttribute="leading" id="KSq-vj-WX7"/>
+                            <constraint firstItem="xKo-Th-p9u" firstAttribute="top" secondItem="BHS-kq-ixJ" secondAttribute="bottom" constant="60" id="VaZ-hb-JE2"/>
                             <constraint firstItem="xKo-Th-p9u" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerXWithinMargins" id="oWz-Jc-ohI"/>
                         </constraints>
                     </view>
@@ -54,4 +63,7 @@
             <point key="canvasLocation" x="382" y="408"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sun" width="80" height="80"/>
+    </resources>
 </document>
