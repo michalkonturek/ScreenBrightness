@@ -13,10 +13,10 @@ import XCTest
 class ScreenBrightnessTests: XCTestCase {
     var sut: ScreenBrightness!
     
-    var mockScreen = MockScreen()
+    var mockScreen = FakeScreen()
     let center = NSNotificationCenter.defaultCenter()
     
-    let delegate = TestDelegate()
+    let delegate = FakeDelegate()
     var didCall = false
     
     override func setUp() {
@@ -29,9 +29,12 @@ class ScreenBrightnessTests: XCTestCase {
     }
     
     func test_init() {
-        let mockCenter = MockNotificationCenter()
+        
+        // when
+        let mockCenter = FakeNotificationCenter()
         self.sut = ScreenBrightness(screen: mockScreen, notificationCenter: mockCenter)
         
+        // then
         XCTAssertNotNil(self.sut)
         XCTAssertNotNil(self.sut.notificationCenter)
         XCTAssertNotNil(self.sut.notificationCenter)
@@ -74,7 +77,7 @@ class ScreenBrightnessTests: XCTestCase {
     
 }
 
-class TestDelegate: ScreenBrightnessMonitoring {
+class FakeDelegate: ScreenBrightnessMonitoring {
     var onDidChange: (() -> ())?
     var onDidChangeToDark: (() -> ())?
     var onDidChangeToLight: (() -> ())?
@@ -92,7 +95,7 @@ class TestDelegate: ScreenBrightnessMonitoring {
     }
 }
 
-class MockScreen: UIScreen {
+class FakeScreen: UIScreen {
     var value: CGFloat = 0
     override var brightness: CGFloat {
         get { return value }
@@ -102,7 +105,7 @@ class MockScreen: UIScreen {
     }
 }
 
-class MockNotificationCenter: NSNotificationCenter {
+class FakeNotificationCenter: NSNotificationCenter {
     internal weak var observer: AnyObject!
     internal var didRemoveObserver: Bool = false
     

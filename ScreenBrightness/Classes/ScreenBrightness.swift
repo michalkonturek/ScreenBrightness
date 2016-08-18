@@ -45,7 +45,6 @@ public class ScreenBrightness {
     @objc func onScreenBrightnessDidChange() {
         self.screenBrightnessDidChange()
         
-        NSLog("\(self.screen?.brightness)")
         if self.screen?.brightness > 0.5 {
             self.screenBrightnessDidChangeToLight()
         } else {
