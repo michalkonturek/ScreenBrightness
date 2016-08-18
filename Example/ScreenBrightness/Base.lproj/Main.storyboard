@@ -55,6 +55,7 @@
                     </view>
                     <connections>
                         <outlet property="brightnessLabel" destination="0eR-03-9zj" id="wKz-vT-GXS"/>
+                        <outlet property="imageView" destination="BHS-kq-ixJ" id="kDO-5v-pXY"/>
                         <outlet property="valueLabel" destination="xKo-Th-p9u" id="IGW-af-Pta"/>
                     </connections>
                 </viewController>

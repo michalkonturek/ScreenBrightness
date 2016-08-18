@@ -29,6 +29,7 @@ import ScreenBrightness
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var brightnessLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     
@@ -46,15 +47,25 @@ class ViewController: UIViewController {
     }
     
     func adjustScreen() {
+        
+        var style = UIStatusBarStyle.Default
+        
         if screenBrightness.isLight {
-            view.backgroundColor = darkColor
-            brightnessLabel.textColor = ligthColor
-            valueLabel.textColor = ligthColor
-        } else {
             view.backgroundColor = ligthColor
             brightnessLabel.textColor = darkColor
             valueLabel.textColor = darkColor
+            imageView.image = UIImage(named: "sun")
+            imageView.tintColor = darkColor
+        } else {
+            view.backgroundColor = darkColor
+            brightnessLabel.textColor = ligthColor
+            valueLabel.textColor = ligthColor
+            imageView.image = UIImage(named: "moon")
+            imageView.tintColor = ligthColor
+            style = .LightContent
         }
+        
+        UIApplication.sharedApplication().statusBarStyle = style
     }
     
     func updateBrightnessValueLabel() {
