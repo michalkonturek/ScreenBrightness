@@ -10,8 +10,6 @@ import Foundation
 
 public protocol ScreenBrightnessMonitoring: class {
     func screenBrightnessDidChange()
-    func screenBrightnessDidChangeToDark();
-    func screenBrightnessDidChangeToLight();
 }
 
 public class ScreenBrightness {
@@ -54,12 +52,6 @@ public class ScreenBrightness {
     
     @objc func onScreenBrightnessDidChange() {
         self.screenBrightnessDidChange()
-        
-        if self.isLight {
-            self.screenBrightnessDidChangeToLight()
-        } else {
-            self.screenBrightnessDidChangeToDark()
-        }
     }
 
 }
@@ -71,13 +63,5 @@ extension ScreenBrightness: ScreenBrightnessMonitoring {
     
     public func screenBrightnessDidChange() {
         self.delegate?.screenBrightnessDidChange()
-    }
-    
-    public func screenBrightnessDidChangeToDark() {
-        self.delegate?.screenBrightnessDidChangeToDark()
-    }
-    
-    public func screenBrightnessDidChangeToLight() {
-        self.delegate?.screenBrightnessDidChangeToLight()
     }
 }

@@ -35,12 +35,9 @@ class ScreenBrightnessTests: XCTestCase {
         XCTAssertTrue(self.sut === self.fakeCenter.observer)
     }
     
-    func test_onScreenBrightnessDidChange_callsDidChangeToLight() {
-
-        var didCallLight = false
+    func test_onScreenBrightnessDidChange_didChangeToLight() {
         
         // given
-        self.fakeDelegate.onDidChangeToLight = { didCallLight = true }
         XCTAssertFalse(self.didCall)
         
         // when
@@ -49,15 +46,12 @@ class ScreenBrightnessTests: XCTestCase {
         
         // then
         XCTAssertTrue(self.didCall)
-        XCTAssertTrue(didCallLight)
+        XCTAssertTrue(self.sut.isLight)
     }
     
-    func test_onScreenBrightnessDidChange_callsDidChangeToDark() {
-        
-        var didCallDark = false
+    func test_onScreenBrightnessDidChange_didChangeToDark() {
         
         // given
-        self.fakeDelegate.onDidChangeToDark = { didCallDark = true }
         XCTAssertFalse(self.didCall)
         
         // when
@@ -65,27 +59,17 @@ class ScreenBrightnessTests: XCTestCase {
         self.fakeCenter.postNotificationName(UIScreenBrightnessDidChangeNotification, object: nil)
         
         // then
-        XCTAssertTrue(didCall)
-        XCTAssertTrue(didCallDark)
+        XCTAssertTrue(self.didCall)
+        XCTAssertFalse(self.sut.isLight)
     }
     
 }
 
 class FakeDelegate: ScreenBrightnessMonitoring {
     var onDidChange: (() -> ())?
-    var onDidChangeToDark: (() -> ())?
-    var onDidChangeToLight: (() -> ())?
     
     internal func screenBrightnessDidChange() {
         self.onDidChange!()
-    }
-    
-    internal func screenBrightnessDidChangeToDark() {
-        self.onDidChangeToDark!()
-    }
-    
-    internal func screenBrightnessDidChangeToLight() {
-        self.onDidChangeToLight!()
     }
 }
 
