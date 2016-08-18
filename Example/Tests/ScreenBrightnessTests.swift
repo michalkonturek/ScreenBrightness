@@ -100,9 +100,8 @@ class FakeScreen: UIScreen {
 }
 
 class FakeNotificationCenter: NSNotificationCenter {
-    internal weak var observer: AnyObject!
     internal var didRemoveObserver: Bool = false
-//    var bindings: Dictionary<NSObject, Selector> = {}
+    internal weak var observer: AnyObject!
     var selector: Selector!
     
     override init () {}

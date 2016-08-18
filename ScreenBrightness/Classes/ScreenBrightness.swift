@@ -16,8 +16,18 @@ public protocol ScreenBrightnessMonitoring: class {
 
 public class ScreenBrightness {
     public weak var delegate: ScreenBrightnessMonitoring?
+    public var brightness: CGFloat {
+        get {
+            return screen.brightness
+        }
+    }
+    public var isLight: Bool {
+        get {
+            return (self.screen?.brightness > 0.5)
+        }
+    }
     
-    weak var screen: UIScreen?
+    weak var screen: UIScreen!
     var notificationCenter: NSNotificationCenter
     
     convenience public init(screen: UIScreen) {
@@ -45,7 +55,7 @@ public class ScreenBrightness {
     @objc func onScreenBrightnessDidChange() {
         self.screenBrightnessDidChange()
         
-        if self.screen?.brightness > 0.5 {
+        if self.isLight {
             self.screenBrightnessDidChangeToLight()
         } else {
             self.screenBrightnessDidChangeToDark()
