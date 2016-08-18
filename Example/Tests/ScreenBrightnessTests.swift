@@ -13,32 +13,26 @@ import XCTest
 class ScreenBrightnessTests: XCTestCase {
     var sut: ScreenBrightness!
     
-    var mockScreen = FakeScreen()
-    let center = NSNotificationCenter.defaultCenter()
+    var fakeScreen = FakeScreen()
+    let fakeCenter = FakeNotificationCenter()
+    let fakeDelegate = FakeDelegate()
     
-    let delegate = FakeDelegate()
     var didCall = false
     
     override func setUp() {
         super.setUp()
         
-        self.delegate.onDidChange = { self.didCall = true }
+        self.fakeDelegate.onDidChange = { self.didCall = true }
         
-        self.sut = ScreenBrightness(screen: self.mockScreen, notificationCenter: self.center)
-        self.sut.delegate = self.delegate
+        self.sut = ScreenBrightness(screen: self.fakeScreen, notificationCenter: self.fakeCenter)
+        self.sut.delegate = self.fakeDelegate
     }
     
     func test_init() {
-        
-        // when
-        let mockCenter = FakeNotificationCenter()
-        self.sut = ScreenBrightness(screen: mockScreen, notificationCenter: mockCenter)
-        
-        // then
         XCTAssertNotNil(self.sut)
         XCTAssertNotNil(self.sut.notificationCenter)
         XCTAssertNotNil(self.sut.notificationCenter)
-        XCTAssertTrue(self.sut === mockCenter.observer)
+        XCTAssertTrue(self.sut === self.fakeCenter.observer)
     }
     
     func test_onScreenBrightnessDidChange_callsDidChangeToLight() {
@@ -46,12 +40,12 @@ class ScreenBrightnessTests: XCTestCase {
         var didCallLight = false
         
         // given
-        self.delegate.onDidChangeToLight = { didCallLight = true }
+        self.fakeDelegate.onDidChangeToLight = { didCallLight = true }
         XCTAssertFalse(self.didCall)
         
         // when
-        self.mockScreen.brightness = 0.6
-        center.postNotificationName(UIScreenBrightnessDidChangeNotification, object: nil)
+        self.fakeScreen.brightness = 0.6
+        self.fakeCenter.postNotificationName(UIScreenBrightnessDidChangeNotification, object: nil)
         
         // then
         XCTAssertTrue(self.didCall)
@@ -63,12 +57,12 @@ class ScreenBrightnessTests: XCTestCase {
         var didCallDark = false
         
         // given
-        self.delegate.onDidChangeToDark = { didCallDark = true }
+        self.fakeDelegate.onDidChangeToDark = { didCallDark = true }
         XCTAssertFalse(self.didCall)
         
         // when
-        self.mockScreen.brightness = 0.4
-        center.postNotificationName(UIScreenBrightnessDidChangeNotification, object: nil)
+        self.fakeScreen.brightness = 0.4
+        self.fakeCenter.postNotificationName(UIScreenBrightnessDidChangeNotification, object: nil)
         
         // then
         XCTAssertTrue(didCall)
@@ -108,16 +102,23 @@ class FakeScreen: UIScreen {
 class FakeNotificationCenter: NSNotificationCenter {
     internal weak var observer: AnyObject!
     internal var didRemoveObserver: Bool = false
+//    var bindings: Dictionary<NSObject, Selector> = {}
+    var selector: Selector!
     
     override init () {}
     
     override func addObserver(observer: AnyObject, selector aSelector: Selector, name aName: String?, object anObject: AnyObject?) {
         self.observer = observer
+        self.selector = aSelector
     }
     
     override func removeObserver(observer: AnyObject) {
         if self.observer === observer {
             self.didRemoveObserver = true
         }
+    }
+    
+    override func postNotificationName(aName: String, object anObject: AnyObject?) {
+        self.observer.performSelector(self.selector)
     }
 }
