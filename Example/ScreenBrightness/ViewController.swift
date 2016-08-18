@@ -51,12 +51,4 @@ extension ViewController: ScreenBrightnessMonitoring {
         adjustScreen()
         updateBrightnessValueLabel()
     }
-    
-    func screenBrightnessDidChangeToDark() {
-        
-    }
-    
-    func screenBrightnessDidChangeToLight() {
-        
-    }
 }
