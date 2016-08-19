@@ -71,7 +71,7 @@ public class ScreenBrightness {
     var notificationCenter: NSNotificationCenter
 
     /**
-     Convenience initializer. Instantiates `ScreenBrightness` object.
+     Instantiates `ScreenBrightness` object.
 
      - important: Initialises with default `NSNotificationCenter`.
 
@@ -87,7 +87,7 @@ public class ScreenBrightness {
      - parameter screen: object representing the device's screen.
      - parameter notificationCenter: object representing `NSNotificationCenter`.
      */
-    public init(screen: UIScreen, notificationCenter: NSNotificationCenter) {
+    init(screen: UIScreen, notificationCenter: NSNotificationCenter) {
         self.screen = screen
         self.notificationCenter = notificationCenter
         self.subscribeToNotifications()
