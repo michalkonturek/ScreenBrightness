@@ -25,25 +25,42 @@
 
 import Foundation
 
-/***/
+/**
+ `ScreenBrightness` delegate.
+ 
+ A class with ability to receive changes in screen brightness.
+ */
 public protocol ScreenBrightnessMonitoring: class {
+    
+    /**
+     Called when a `brightness` of device screen changes.
+     */
     func screenBrightnessDidChange()
 }
 
-/***/
+/**
+ A `class` that detects changes in screen brightness.
+ */
 public class ScreenBrightness {
     
-    /***/
+    /**
+     A delegate that conforms to `ScreenBrightnessMonitoring` protocol.
+     */
     public weak var delegate: ScreenBrightnessMonitoring?
     
-    /***/
+    /**
+     Returns screen brightness value.
+     - important: Returned value is between 0 and 1.
+     */
     public var brightness: CGFloat {
         get {
             return screen.brightness
         }
     }
     
-    /***/
+    /**
+     Returns `true` if `screen brightness` is greater than `0.5`.
+     */
     public var isLight: Bool {
         get {
             return (self.screen?.brightness > 0.5)
@@ -53,12 +70,23 @@ public class ScreenBrightness {
     weak var screen: UIScreen!
     var notificationCenter: NSNotificationCenter
     
-    /***/
+    /**
+     Convenience initializer. Instantiates `ScreenBrightness` object.
+     
+     - important: Initialises with default `NSNotificationCenter`.
+     
+     - parameter screen: object representing the device's screen.
+     */
     convenience public init(screen: UIScreen) {
         self.init(screen: screen, notificationCenter: NSNotificationCenter.defaultCenter())
     }
     
-    /***/
+    /**
+     Instantiates `ScreenBrightness` object.
+     
+     - parameter screen: object representing the device's screen.
+     - parameter notificationCenter: object representing `NSNotificationCenter`.
+     */
     public init(screen: UIScreen, notificationCenter: NSNotificationCenter) {
         self.screen = screen
         self.notificationCenter = notificationCenter
@@ -75,7 +103,6 @@ public class ScreenBrightness {
 
 extension ScreenBrightness: ScreenBrightnessMonitoring {
     
-    /***/
     func subscribeToNotifications() {
         let center = self.notificationCenter
         center.addObserver(self,
@@ -88,7 +115,9 @@ extension ScreenBrightness: ScreenBrightnessMonitoring {
         self.screenBrightnessDidChange()
     }
     
-    /***/
+    /**
+     Called when a `brightness` of device screen changes.
+     */
     public func screenBrightnessDidChange() {
         self.delegate?.screenBrightnessDidChange()
     }
