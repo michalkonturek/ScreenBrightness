@@ -78,6 +78,7 @@ class ScreenBrightnessTests: XCTestCase {
         // then
         XCTAssertTrue(self.didCall)
         XCTAssertTrue(self.sut.isLight)
+        XCTAssertEqual(self.sut.brightness, 0.6)
     }
     
     func test_onScreenBrightnessDidChange_didChangeToDark() {
@@ -92,6 +93,7 @@ class ScreenBrightnessTests: XCTestCase {
         // then
         XCTAssertTrue(self.didCall)
         XCTAssertFalse(self.sut.isLight)
+        XCTAssertEqual(self.sut.brightness, 0.4)
     }
     
 }
