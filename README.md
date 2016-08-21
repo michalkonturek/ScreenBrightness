@@ -14,8 +14,7 @@ ScreenBrightness allows you to monitor brightness of your device screen without 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-Alternatively, you could run the demo by entering `pod try ScreenBrightness` in your terminal 
-without the need of cloning this repo.
+Alternatively, you could run the demo by executing `pod try ScreenBrightness` in your terminal.
 
 **NB** Screen brigthness of iOS simulators is always 0.5, so make sure you run it on a real device.
 
@@ -28,15 +27,14 @@ To start, simply import `ScreenBrightness` to your project
 import ScreenBrightness
 ```
 
-and initialize ScreenBrightness class and set a delegate
+and initialize `ScreenBrightness` class, set its `delegate`
 
 ```swift
 let screenBrightness = ScreenBrightness(screen: UIScreen.mainScreen())
 screenBrightness.delegate = self
 ```
 
-and implement `screenBrightnessDidChange` method to start monitoring screen brightness changes. 
-
+and then implement `screenBrightnessDidChange` method to start monitoring screen brightness changes. 
 
 ```swift
 func screenBrightnessDidChange() {

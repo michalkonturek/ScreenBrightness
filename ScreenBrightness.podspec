@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ScreenBrightness'
   s.version          = '1.0.0'
-  s.summary          = 'Provides control and monitoring of screen brightness.'
+  s.summary          = 'ScreenBrightness allows you to monitor brightness of your device screen without a hassle.'
   s.homepage         = 'https://github.com/michalkonturek/ScreenBrightness'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -15,5 +15,4 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
