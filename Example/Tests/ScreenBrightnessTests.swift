@@ -50,6 +50,20 @@ class ScreenBrightnessTests: XCTestCase {
         XCTAssertNotNil(self.sut.notificationCenter)
         XCTAssertNotNil(self.sut.notificationCenter)
         XCTAssertTrue(self.sut === self.fakeCenter.observer)
+        XCTAssertEqual(self.sut.threshold, 0.5)
+    }
+    
+    func test_isLight() {
+        self.sut.threshold = 0.2
+        
+        self.fakeScreen.brightness = 0.1
+        XCTAssertFalse(self.sut.isLight)
+        
+        self.fakeScreen.brightness = 0.2
+        XCTAssertFalse(self.sut.isLight)
+        
+        self.fakeScreen.brightness = 0.21
+        XCTAssertTrue(self.sut.isLight)
     }
     
     func test_onScreenBrightnessDidChange_didChangeToLight() {

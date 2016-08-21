@@ -63,9 +63,16 @@ public class ScreenBrightness {
      */
     public var isLight: Bool {
         get {
-            return (self.screen?.brightness > 0.5)
+            return (self.screen?.brightness > CGFloat(self.threshold))
         }
     }
+    
+    /**
+     Determines if brightness is ligt or dark. Default value is 0.5.
+     
+     - important: This value must be between 0 and 1.
+     */
+    public var threshold: Float = 0.5
 
     weak var screen: UIScreen!
     var notificationCenter: NSNotificationCenter
