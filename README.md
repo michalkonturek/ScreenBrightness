@@ -86,7 +86,7 @@ ScreenBrightness is available under the MIT license. See the [LICENSE][LICENSE] 
 
 ## Credits
 
-Thsis repository is inspired by [ASCScreenBrightnessDetector][ASCScreenBrightnessDetector] 
+Thsis repository is inspired by [ASCScreenBrightnessDetector][DETECTOR] 
 by André Schneider. 
 
 [DETECTOR]:https://github.com/schneiderandre/ASCScreenBrightnessDetector
