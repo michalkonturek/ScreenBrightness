@@ -59,7 +59,7 @@ public class ScreenBrightness {
     }
 
     /**
-     Returns `true` if `screen brightness` is greater than `0.5`.
+     Returns `true` if `screen brightness` is greater than defined `threshold`.
      */
     public var isLight: Bool {
         get {
