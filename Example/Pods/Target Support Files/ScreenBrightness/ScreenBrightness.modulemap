@@ -1,6 +1,0 @@
-framework module ScreenBrightness {
-  umbrella header "ScreenBrightness-umbrella.h"
-
-  export *
-  module * { export * }
-}
