@@ -18,6 +18,9 @@ Alternatively, you could run the demo by executing `pod try ScreenBrightness` in
 
 **NB** Screen brigthness of iOS simulators is always 0.5, so make sure you run it on a real device.
 
+![Demo][DEMO]
+
+[DEMO]:https://github.com/michalkonturek/ScreenBrightness/blob/master/demo.gif
 
 ## Usage
 
