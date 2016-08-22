@@ -22,6 +22,7 @@ Alternatively, you could run the demo by executing `pod try ScreenBrightness` in
 
 [DEMO]:https://github.com/michalkonturek/ScreenBrightness/blob/master/demo.gif
 
+
 ## Usage
 
 To start, simply import `ScreenBrightness` to your project
