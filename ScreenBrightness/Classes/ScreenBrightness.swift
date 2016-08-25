@@ -115,7 +115,7 @@ extension ScreenBrightness: ScreenBrightnessMonitoring {
         center.addObserver(self,
                            selector: #selector(onScreenBrightnessDidChange),
                            name: UIScreenBrightnessDidChangeNotification,
-                           object: nil)
+                           object: self.screen)
     }
 
     @objc func onScreenBrightnessDidChange() {
