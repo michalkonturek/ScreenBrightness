@@ -50,6 +50,7 @@ class ScreenBrightnessTests: XCTestCase {
         XCTAssertNotNil(self.sut.notificationCenter)
         XCTAssertNotNil(self.sut.notificationCenter)
         XCTAssertTrue(self.sut === self.fakeCenter.observer)
+        XCTAssertTrue(self.sut.screen === self.fakeCenter.object)
         XCTAssertEqual(self.sut.threshold, 0.5)
     }
     
@@ -119,6 +120,7 @@ class FakeScreen: UIScreen {
 class FakeNotificationCenter: NSNotificationCenter {
     internal var didRemoveObserver: Bool = false
     internal weak var observer: AnyObject!
+    internal weak var object: AnyObject?
     var selector: Selector!
     
     override init () {}
@@ -126,6 +128,7 @@ class FakeNotificationCenter: NSNotificationCenter {
     override func addObserver(observer: AnyObject, selector aSelector: Selector, name aName: String?, object anObject: AnyObject?) {
         self.observer = observer
         self.selector = aSelector
+        self.object = anObject
     }
     
     override func removeObserver(observer: AnyObject) {
