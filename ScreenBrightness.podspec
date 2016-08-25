@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ScreenBrightness'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'ScreenBrightness allows you to monitor brightness of your device screen without a hassle.'
   s.homepage         = 'https://github.com/michalkonturek/ScreenBrightness'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
